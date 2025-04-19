@@ -4,12 +4,12 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>{{ $title ?? 'Pemweb' }}</title>
+	<title>Livewire and filament</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 	<meta name="description" content="This is meta description">
 	<meta name="author" content="Themefisher">
-	<link rel="shortcut icon" href="{{ assets ('front/images/favicon.png') }}" type="image/x-icon">
-	<link rel="icon" href="{{ assets ('front/images/favicon.png') }}" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 	<!-- # Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +17,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
 	<!-- # CSS Plugins -->
-	<link rel="stylesheet" href="{{ assets ('front/plugins/slick/slick.css') }}">
-	<link rel="stylesheet" href="{{ assets ('front/plugins/font-awesome/fontawesome.min.css') }}">
-	<link rel="stylesheet" href="{{ assets ('front/plugins/font-awesome/brands.css') }}">
-	<link rel="stylesheet" href="{{ assets ('front/plugins/font-awesome/solid.css') }}">
+	<link rel="stylesheet" href="plugins/slick/slick.css">
+	<link rel="stylesheet" href="plugins/font-awesome/fontawesome.min.css">
+	<link rel="stylesheet" href="plugins/font-awesome/brands.css">
+	<link rel="stylesheet" href="plugins/font-awesome/solid.css">
 
 	<!-- # Main Style Sheet -->
-	<link rel="stylesheet" href="{{ assets ('front/css/style.css') }}">
-  @livewireStyles
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -39,6 +38,13 @@
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav m-auto mb-2 mb-lg-0">
+					<li class="nav-item"> <a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item "> <a class="nav-link" href="about.html">About Us</a></li>
+					<li class="nav-item "> <a class="nav-link" href="services.html">Services</a></li>
+					<li class="nav-item "> <a class="nav-link" href="team.html">Our Team</a></li>
+					<li class="nav-item "><a class="nav-link " href="blog.html">Blog</a></li>
+					<li class="nav-item "><a class="nav-link " href="faq.html">FAQ</a></li>
 				</ul>
 				<a href="#!" class="btn btn-outline-primary">Contact Us</a>				
 			</div>
@@ -46,8 +52,6 @@
 	</nav>
 </header>
 <!-- /navigation -->
-
-{{ $slot }}
 
 <div class="modal applyLoanModal fade" id="applyLoan" tabindex="-1" aria-labelledby="applyLoanLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -279,11 +283,11 @@
 </footer>
 
 <!-- # JS Plugins -->
-<script src="{{ assets ('front/plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ assets ('front/plugins/bootstrap/bootstrap.min.js') }}"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
 
 <!-- Main Script -->
-<script src="{{ assets ('front/js/script.js') }}"></script>
-@livewireScripts
+<script src="js/script.js"></script>
+
 </body>
 </html>
