@@ -1,8 +1,9 @@
+@php 
+use App\Models\PageConfig;
+$pageConfig = PageConfig::first();
+@endphp
+
 <main>
-  @php 
-    use App\Models\PageConfig;
-    $pageConfig = PageConfig::first();
-  @endphp
     <section class="banner bg-tertiary position-relative overflow-hidden">
         <div class="container">
           <div class="row align-items-center justify-content-center">
