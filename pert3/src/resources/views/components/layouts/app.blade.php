@@ -43,7 +43,6 @@
 					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('home') }}">Home</a></li>
                     <li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('profile') }}">Profile</a></li>
                     <li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('about') }}">About</a></li>
-					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('blog') }}">blog</a></li>
 				</ul>
 			</div>
 		</div>
