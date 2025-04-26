@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -13,10 +12,12 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::create([
-            'name' => 'testing',
+        \App\Models\Product::create([
+            'nomor' => '1',
+            'name' => 'Logo 1',
+            'description' => 'Logo 1 Description',
             'image' => '',
-            'description' =>'sdfsdfsddsfsd'
+            'link' => 'http://localhost/about'
         ]);
     }
 }

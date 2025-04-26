@@ -2,31 +2,30 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\ProductResource\Pages;
-use App\Filament\Admin\Resources\ProductResource\RelationManagers;
-use App\Models\Product;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Product;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Admin\Resources\ProductResource\Pages;
+use App\Filament\Admin\Resources\ProductResource\RelationManagers;
 
-class ProductResource extends Resource 
+class ProductResource extends Resource
 {
-
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
     protected static ?string $navigationGroup = 'Product';
-
+    
     protected static ?string $navigationLabel = 'Product Manager';
 
-    protected static ?string $breadcrumb = 'Product Manager';
+    protected static ?string $recordTitleAttribute = 'name';
 
-    protected static ?string $pluralLabel = 'Product Manager';
+    protected static ?int $navigationSort = 1;
 
     public static function getNavigationBadge(): ?string
     {
@@ -37,15 +36,21 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('nomor')
+                    ->maxLength(255)
+                    ->default(null),
                 Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('description')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\TextInput::make('description')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\TextInput::make('link')
+                    ->maxLength(255)
+                    ->default(null),
             ]);
     }
 
@@ -53,10 +58,14 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('nomor')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('description')
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('link')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -91,20 +100,8 @@ class ProductResource extends Resource
     {
         return [
             'index' => Pages\ListProducts::route('/'),
-          //  'create' => Pages\CreateProduct::route('/create'),
+            'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
         ];
     }
-
-    public static function CanCreate() : bool {
-        return Product::count()=== 0;
-    }
-
-    public static function CanDelete(\Illuminate\Database\Eloquent\Model $record) : bool {
-        return false;
-    }
-    public static function CanDeleteAny() : bool {
-        return false;
-    }
-    
 }

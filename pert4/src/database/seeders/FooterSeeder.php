@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class FooterSeeder extends Seeder
 {
@@ -12,6 +12,11 @@ class FooterSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Footer::create([
+            'section' => 'Service',
+            'label' => 'Online Serice',
+            'url' => 'http://localhost',
+            'order' => 1,
+        ]);
     }
 }

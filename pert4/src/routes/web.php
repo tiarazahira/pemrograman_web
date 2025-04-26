@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
+use App\Livewire\ShowHomePage;
+use App\Livewire\ShowAboutPage;
+use Illuminate\Support\Facades\Route;
 
 /* NOTE: Do Not Remove
 / Livewire asset handling if using sub folder in domain
@@ -16,6 +18,5 @@ Livewire::setScriptRoute(function ($handle) {
 /*
 / END
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ShowHomePage::class)->name('home');
+Route::get('/about', ShowAboutPage::class)->name('about');

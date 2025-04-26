@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class LogoSeeder extends Seeder
 {
@@ -12,6 +12,9 @@ class LogoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Logo::create([
+            'title' => 'Logo',
+            'image' => '',
+        ]);
     }
 }
