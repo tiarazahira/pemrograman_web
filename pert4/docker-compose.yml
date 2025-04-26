@@ -30,7 +30,7 @@ services:
       SERVICE_NAME: mysql_pemweb
   nginx_pemweb:
     build: ./nginx
-    image: nginx_pemweb:latest
+    image: nginx_pemweb:latest  
     container_name: nginx_pemweb
     hostname: "nginx_pemweb"
     ports:
