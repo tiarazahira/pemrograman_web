@@ -16,7 +16,7 @@ class ProductChart extends BaseWidget
                 ->description('Total Product')
                 ->color('danger')
                 ->chart([2, 4, 3, 5, 4, 6, 5])
-                ->icon('heroicon-o-briefcase')
+                ->icon('heroicon-o-briefcase')   
         ];
     }
 }
