@@ -19,9 +19,9 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
-    protected static ?string $navigationGroup = 'Product Manager';
+    protected static ?string $navigationGroup = 'Product';
     
-    protected static ?string $navigationLabel = 'Product';
+    protected static ?string $navigationLabel = 'Product Manager';
 
     protected static ?string $recordTitleAttribute = 'name';
 

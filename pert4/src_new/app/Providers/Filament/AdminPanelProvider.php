@@ -56,7 +56,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Administration')
                     ->label('Settings')
                     // ->label('Logo')
-                    ->label('Product Manager'),
+                    ->label('Product'),
                     
             ])
             ->userMenuItems([
