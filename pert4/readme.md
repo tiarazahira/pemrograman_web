@@ -1,3 +1,4 @@
+```
 docker exec -it pemweb bash
 composer create-project --prefer-dist raugadh/fila-starter .
 rm -rf *
@@ -29,3 +30,5 @@ Password : password
 
 
 php artisan make:livewire ShowHomePage
+
+```
