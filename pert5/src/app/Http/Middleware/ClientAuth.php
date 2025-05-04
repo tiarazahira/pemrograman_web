@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ClientAuth
 {
-
     public function handle(Request $request, Closure $next): Response
     {
         $token = $request->bearerToken();

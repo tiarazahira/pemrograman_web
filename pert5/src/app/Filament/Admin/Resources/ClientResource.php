@@ -23,11 +23,12 @@ class ClientResource extends Resource
     {
         return $form
             ->schema([
+                
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('api_token')
-                    ->required()
+                    // ->required()
                     // ->maxLength(255),
                     ->disabled(true),
                     
@@ -38,6 +39,8 @@ class ClientResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('api_token')

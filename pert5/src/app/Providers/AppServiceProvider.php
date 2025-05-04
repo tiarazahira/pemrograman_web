@@ -3,12 +3,12 @@
 namespace App\Providers;
 
 use Filament\Pages\Page;
+use Illuminate\Routing\Route;
 use App\Policies\ActivityPolicy;
 use App\Http\Middleware\ClientAuth;
 use Illuminate\Support\Facades\Gate;
 use Filament\Actions\MountableAction;
 use Filament\Support\Enums\Alignment;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Activitylog\Models\Activity;
 use Filament\Notifications\Notification;
@@ -46,7 +46,6 @@ class AppServiceProvider extends ServiceProvider
         });
     }
 }
-
 class RouteServiceProvider extends ServiceProvider
 {
     public function boot()

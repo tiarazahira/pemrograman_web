@@ -1,9 +1,7 @@
 <?php
 
-use Livewire\Livewire;
-use App\Http\Middleware\ClientAuth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductApiController;
+use Livewire\Livewire;
 
 /* NOTE: Do Not Remove
 / Livewire asset handling if using sub folder in domain
@@ -21,7 +19,3 @@ Livewire::setScriptRoute(function ($handle) {
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::middleware(ClientAuth::class)->group(function () {
-//     Route::get('/products', [ProductApiController::class, 'index']);
-// });
