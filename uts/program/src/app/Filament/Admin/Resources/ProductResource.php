@@ -19,11 +19,16 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
-    protected static ?string $navigationGroup = 'Product';
+    protected static ?string $navigationGroup = 'Data Bunga';
 
-    protected static ?string $recordTitleAttribute = 'Data Product';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?int $navigationSort = 1;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {
@@ -34,7 +39,7 @@ class ProductResource extends Resource
                     ->default(null),
                     Forms\Components\Select::make('jenis_bunga')
                     ->options([
-                        'potong' => 'Potong',
+                        'segar' => 'segar',
                         'hias' => 'Hias',
                         'kering' => 'Kering',
                         'bouquet' => 'Bouquet',
@@ -92,6 +97,7 @@ class ProductResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

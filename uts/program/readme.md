@@ -15,6 +15,5 @@ php artisan make:model -m Product
 php artisan make:filament-resource Product --generate
 ```
 4. setelah itu sudah jadilah system Toko Bunga TIARA's FLORIST
-
 ## DOSEN YANG TERHORMAT : JEFRY SUNUPURWA ASRI S.KOM M.KOM
 # TERIMAKASIH
