@@ -46,9 +46,6 @@ class ProductResource extends Resource
                     ])
                     ->required()
                     ->searchable(),
-                Forms\Components\TextInput::make('warna')
-                    ->maxLength(255)
-                    ->default(null),
                 Forms\Components\TextInput::make('stok')
                     ->numeric()
                     ->nullable(),
@@ -73,8 +70,6 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('nama_bunga')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('jenis_bunga'),
-                Tables\Columns\TextColumn::make('warna')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('stok')
                     ->numeric()
                     ->sortable(),

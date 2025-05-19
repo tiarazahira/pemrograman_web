@@ -11,12 +11,10 @@ class Product extends Model
         protected $fillable = [
             'nama_bunga',
             'jenis_bunga',
-            'warna',
             'stok',
             'harga_satuan',
             'deskripsi',
             'image',
-            // 'status_ketersediaan',
         ];
     
         protected $casts = [
