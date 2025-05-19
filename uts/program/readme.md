@@ -14,11 +14,7 @@ php artisan make:model -m Product
 ```
 php artisan make:filament-resource Product --generate
 ```
-4. setelah itu membuat widget stateoverview berdasarkan dari jenis_bunga 
-```
-php artisan make:filament-widget ProductWidget --stats-overview
-```
-5. setelah itu sudah jadilah system Toko Bunga TIARA's FLORIST
+4. setelah itu sudah jadilah system Toko Bunga TIARA's FLORIST
 
 ## DOSEN YANG TERHORMAT : JEFRY SUNUPURWA ASRI S.KOM M.KOM
 # TERIMAKASIH
